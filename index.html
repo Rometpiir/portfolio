@@ -107,13 +107,13 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="320" viewBox="0 0 4806 4278">
   <defs>
-    <!-- Defines a circle mask centered within the SVG canvas -->
+    <!-- Defines the circular clipping boundary -->
     <clipPath id="circleView">
       <circle cx="2403" cy="2030" r="1720" />
     </clipPath>
   </defs>
 
-  <!-- Applies the circular mask to your image -->
+  <!-- The cropped image -->
   <image 
     x="685" 
     y="302" 
@@ -122,6 +122,16 @@
     clip-path="url(#circleView)"
     href="assets/img/pilt1.png" 
     xlink:href="assets/img/pilt1.png" 
+  />
+
+  <!-- The white ring border on top -->
+  <circle 
+    cx="2403" 
+    cy="2030" 
+    r="1720" 
+    fill="none" 
+    stroke="#ffffff" 
+    stroke-width="80" 
   />
 </svg>
           </div>
