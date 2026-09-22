@@ -1218,3 +1218,30 @@
     ]
   );
 });
+
+               while (curString.substr(curStrPos - 1).charAt(0) !== endTag) {
+                    curStrPos--;
+                    if (curStrPos < 0) {
+                      break;
+                    }
+                  }
+                  curStrPos--;
+                }
+                return curStrPos;
+              },
+            },
+          ]);
+
+          return HTMLParser;
+        })();
+
+        exports["default"] = HTMLParser;
+        var htmlParser = new HTMLParser();
+        exports.htmlParser = htmlParser;
+
+        /***/
+      },
+      /******/
+    ]
+  );
+});
