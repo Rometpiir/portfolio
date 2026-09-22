@@ -198,3 +198,42 @@ var typed = new Typed(".type", {
   backSpeed: 60,
   loop: true,
 });
+
+/* ==========================================
+   PROJEKTIDE MODALID (Aknad)
+   ========================================== */
+
+// Windows Modali avamine ja sulgemine
+function openModal() {
+  const winModal = document.getElementById('projectModal');
+  if (winModal) winModal.style.display = 'block';
+}
+
+function closeModal() {
+  const winModal = document.getElementById('projectModal');
+  if (winModal) winModal.style.display = 'none';
+}
+
+// Linux Modali avamine ja sulgemine
+function openLinuxModal() {
+  const linuxModal = document.getElementById('linuxModal');
+  if (linuxModal) linuxModal.style.display = 'block';
+}
+
+function closeLinuxModal() {
+  const linuxModal = document.getElementById('linuxModal');
+  if (linuxModal) linuxModal.style.display = 'none';
+}
+
+// Sulge aken, kui vajutatakse väljapoole akent
+window.addEventListener('click', function(event) {
+  const winModal = document.getElementById('projectModal');
+  const linuxModal = document.getElementById('linuxModal');
+
+  if (event.target === winModal) {
+    winModal.style.display = 'none';
+  }
+  if (event.target === linuxModal) {
+    linuxModal.style.display = 'none';
+  }
+});
