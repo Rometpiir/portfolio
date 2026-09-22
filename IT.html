@@ -74,26 +74,121 @@
   </header>
 
   <!-- Main Content -->
-<!-- Main Content -->
   <main class="main">
     <section class="portfolio section" id="it-projects" style="padding-top: 6rem; padding-bottom: 3rem;">
       <h2 class="section_title">IT Projektid</h2>
       <span class="section_subtitle">Minu teostatud tööd ja tegemised</span>
 
+      <!-- PROJEKT 1: Windows Server Taristu -->
+      <div class="project_container container grid">
+        <!-- Projekti Päis -->
+        <div class="project_header">
+          <span class="project_subtitle">Infrastruktuuri projekt</span>
+          <h2 class="project_title">Väike-ettevõtte IT-taristuteenused (Windows Server)</h2>
+          <p class="project_summary">
+            Ehitasin ja konfigureerisin nullist toimiva, skaleeritava ning turvalise ettevõtte võrgutaristu. 
+            Projekt hõlmas keskset kasutajahaldust, failiteenuseid, võrguruutingut ja virtualiseerimist, 
+            tagades ärikriitiliste teenuste kõrge kättesaadavuse ning turvalise kaughalduse võimekuse.
+          </p>
+          
+          <!-- Oskused / Tehnoloogiad -->
+          <div class="project_tags">
+            <span class="tag">Windows Server 2025</span>
+            <span class="tag">Active Directory (AD DS)</span>
+            <span class="tag">Hyper-V</span>
+            <span class="tag">DNS & DHCP</span>
+            <span class="tag">RRAS & VPN</span>
+            <span class="tag">IIS Web Server</span>
+            <span class="tag">Group Policy (GPO)</span>
           </div>
         </div>
 
-      
+        <!-- Pilt / Võrgu topoloogia -->
+        <div class="project_img_wrapper">
+          <img src="assets/img/windows-topoloogia.png" alt="Võrgu topoloogia skeem" class="project_img">
+          <span class="img_caption">Joonis 1: Ettevõtte võrgutopoloogia ja serverite arhitektuur</span>
+        </div>
+
+        <!-- Mida ma tegin (Tehnilised oskused) -->
+        <div class="project_details_box">
+          <h3>Teostatud tööd ja omandatud oskused</h3>
+          <ul class="project_list">
+            <li><strong>Keskne domeenihaldus:</strong> Paigaldasin Active Directory (DC1 ja server-core DC2) FSMO rollide ja DNS teenustega, luues turvalise domeenikeskkonna (%perenimi%.infra).</li>
+            <li><strong>Virtualiseerimine:</strong> Seadistasin Hyper-V hüperviisori eraldatud virtuaalmasinate (DC2, WEB) käitamiseks.</li>
+            <li><strong>Võrguteenused & Turvalisus:</strong> Konfigureerisin ruutingu (RRAS), DHCP serveri, tulemüüri ning SSTP/L2TP VPN-ühendused turvaliseks kaugtööks.</li>
+            <li><strong>Veebi- ja failiserverid:</strong> Paigaldasin IIS veebiserveri ja klassikalise SMB failiserveri (FS) ettevõtte andmete tsentraalseks hoiustamiseks.</li>
+            <li><strong>Tsentraalne haldus:</strong> Juhtisin Windows Server CORE versioone läbi Windows 11 haldusmasina (MGMT) ja RSAT tööriistade.</li>
+          </ul>
+        </div>
+
+        <!-- Konfiguratsiooni tabel -->
+        <div class="project_table_wrapper">
+          <h3>Süsteemi konfiguratsiooni ülevaade</h3>
+          <table class="config_table">
+            <thead>
+              <tr>
+                <th>Hostinimi</th>
+                <th>IP aadress</th>
+                <th>Operatsioonisüsteem</th>
+                <th>Rollid & Teenused</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ROUTER</strong></td>
+                <td>172.16.0.1 (LAN)</td>
+                <td>Win Server 2025 Std GUI</td>
+                <td>RRAS Router, VPN, DHCP, Tulemüür</td>
+              </tr>
+              <tr>
+                <td><strong>DC1</strong></td>
+                <td>172.16.0.2</td>
+                <td>Win Server 2025 Std GUI</td>
+                <td>Primary Domain Controller (AD DS), DNS</td>
+              </tr>
+              <tr>
+                <td><strong>DC2</strong></td>
+                <td>172.16.0.4</td>
+                <td>Win Server 2025 Std CORE</td>
+                <td>Secondary Domain Controller, DNS</td>
+              </tr>
+              <tr>
+                <td><strong>HYPERV</strong></td>
+                <td>172.16.0.6</td>
+                <td>Win Server 2025 Datacenter</td>
+                <td>Hyper-V Host (hüperviisor)</td>
+              </tr>
+              <tr>
+                <td><strong>WEB</strong></td>
+                <td>172.16.0.10</td>
+                <td>Win Server 2025 Std CORE</td>
+                <td>IIS Veebiserver</td>
+              </tr>
+              <tr>
+                <td><strong>FS</strong></td>
+                <td>172.16.0.12</td>
+                <td>Win Server 2025 Std GUI</td>
+                <td>Failiserver (SMB share'id)</td>
+              </tr>
+              <tr>
+                <td><strong>MGMT</strong></td>
+                <td>DHCP Client</td>
+                <td>Windows 11 Pro</td>
+                <td>Haldus- ja testimismasin (RSAT)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <!-- Tagasi nupp -->
       <div style="text-align: center; margin-top: 3rem;">
-        <a href="index.html#projects" class="button button-flex">
+        <a href="index.html#projects" class="button button--flex">
           <i class="uil uil-arrow-left button_icon"></i> Tagasi pealehele
         </a>
       </div>
     </section>
   </main>
-
 
   <!-- Footer -->
   <footer class="footer">
