@@ -1014,3 +1014,116 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* --- IT PROJEKTID STIILID --- */
+.project_container {
+  row-gap: 2.5rem;
+  background: #1f1d2b;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+}
+
+.project_subtitle {
+  color: #6c5ce7;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project_title {
+  font-size: 1.8rem;
+  margin: 0.5rem 0 1rem;
+  color: #fff;
+}
+
+.project_summary {
+  color: #b0b0d0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: rgba(108, 92, 231, 0.15);
+  color: #a29bfe;
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid rgba(108, 92, 231, 0.3);
+}
+
+.project_img_wrapper {
+  text-align: center;
+}
+
+.project_img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img_caption {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.project_details_box h3, 
+.project_table_wrapper h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.project_list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  color: #c2c2e0;
+  line-height: 1.8;
+}
+
+.project_list strong {
+  color: #fff;
+}
+
+.project_table_wrapper {
+  overflow-x: auto;
+}
+
+.config_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.config_table th, 
+.config_table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.config_table th {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-weight: 600;
+}
+
+.config_table td {
+  color: #b0b0d0;
+}
+
+.config_table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
