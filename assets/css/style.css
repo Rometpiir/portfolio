@@ -1014,4 +1014,24 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* --- PROFIILIPILDI RING --- */
+.home_img, 
+.about_img_box {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--first-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
 
+.home_blob-img, 
+.about_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
