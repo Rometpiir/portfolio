@@ -230,6 +230,27 @@
           </button>
         </div>
       </div>
+      <!-- LISA UUS LINUXI PROJEKTI KAART SIIA -->
+      <div class="project_card">
+        <span style="color: #00cec9; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Linux / BSD Taristu</span>
+        <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">Ettevõtte Linux-põhised sise- ja pilveteenused</h3>
+        <p style="color: #b0b0d0; font-size: 0.95rem; line-height: 1.6;">
+          Ehitasin ettevõttele Eesti AS tsentraalselt hallatava Linuxi taristu, mis integreerib Samba AD domeenihalduse, OPNsense tulemüüri ja kaasaegsed pilveteenused.
+        </p>
+
+        <div class="project_tags">
+          <span class="tag">Ubuntu Server 24.04</span>
+          <span class="tag">OPNsense</span>
+          <span class="tag">Samba AD DS</span>
+          <span class="tag">Nextcloud</span>
+          <span class="tag">Rocket.Chat</span>
+          <span class="tag">Wiki.js</span>
+        </div>
+
+        <button class="button_details" onclick="openLinuxModal()" style="background-color: #00cec9; color: #191627; font-weight: 600;">
+          Loe lähemalt <i class="uil uil-arrow-right"></i>
+        </button>
+      </div>
 
       <!-- Tagasi nupp -->
       <div style="text-align: center; margin-top: 3rem;">
@@ -384,6 +405,164 @@
               <td><strong>MGMT</strong></td>
               <td>Windows 11 Pro</td>
               <td>Haldus- ja testimismasin (RSAT)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- LISA UUS LINUXI HÜPIKAKEN SIIA -->
+  <div id="linuxModal" class="modal">
+    <div class="modal_content">
+      <span class="modal_close" onclick="closeLinuxModal()">&times;</span>
+      
+      <span class="modal_subtitle" style="color: #00cec9;">Projekti üksikasjad</span>
+      <h2 class="modal_title">Ettevõtte Linux-põhised sise- ja pilveteenused (Eesti AS)</h2>
+      
+      <p style="color: #b0b0d0; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Seoses ettevõtte Eesti AS kiire kasvuga püstitati ühtne ja keskselt hallatav taristu. Projekti eesmärk oli pakkuda töötajatele turvalist failijagamist, sisekommunikatsiooni ja teadmusbaasi, kus kasutajad saavad kõigisse teenustesse sisse logida ühe sama domeenikontoga (SSO/LDAP).
+      </p>
+
+      <!-- TUMEDA TEEMAGA LINUX TOPOLOOGIA DIAGRAMM -->
+      <div style="text-align: center; margin: 1.5rem 0;">
+        <svg viewBox="0 0 850 580" xmlns="http://www.w3.org/2000/svg" style="background: #151322; border-radius: 12px; padding: 15px; width: 100%; height: auto; border: 1px solid rgba(255,255,255,0.1);">
+          <!-- Kohtvõrgu kast -->
+          <rect x="15" y="15" width="820" height="550" rx="20" fill="#1b182b" stroke="#00cec9" stroke-width="2"/>
+          
+          <!-- Võrgu päis -->
+          <text x="40" y="50" fill="#00cec9" font-size="14" font-weight="bold" font-family="sans-serif">KOHTVÕRK: 10.11.12.0/24</text>
+          <text x="40" y="70" fill="#a29bfe" font-size="13" font-weight="bold" font-family="sans-serif">DOMEENINIMI: company.local</text>
+
+          <!-- ROUTER -->
+          <g transform="translate(300, 35)">
+            <rect x="0" y="0" width="250" height="95" rx="10" fill="#252238" stroke="#00cec9" stroke-width="2"/>
+            <text x="125" y="24" fill="#fff" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">ruuter.company.local</text>
+            <text x="125" y="42" fill="#888" font-size="11" text-anchor="middle" font-family="sans-serif">OPNsense Tulemüür & Ruuter</text>
+            <text x="125" y="62" fill="#00cec9" font-size="11" text-anchor="middle" font-family="sans-serif">• DHCP pool & Gateway</text>
+            <text x="125" y="80" fill="#b0b0d0" font-size="10" text-anchor="middle" font-family="sans-serif">WAN: DHCP | Hardware Offloads Disabled</text>
+          </g>
+
+          <!-- DC (Samba AD) -->
+          <g transform="translate(45, 170)">
+            <rect x="0" y="0" width="220" height="110" rx="10" fill="#252238" stroke="#6c5ce7" stroke-width="1.5"/>
+            <text x="110" y="24" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle" font-family="sans-serif">dc.company.local</text>
+            <text x="110" y="42" fill="#888" font-size="11" text-anchor="middle" font-family="sans-serif">Ubuntu Server 24.04 LTS</text>
+            <text x="110" y="65" fill="#a29bfe" font-size="11" font-weight="bold" text-anchor="middle" font-family="sans-serif">• Samba Active Directory DS</text>
+            <text x="110" y="83" fill="#b0b0d0" font-size="11" text-anchor="middle" font-family="sans-serif">• Keskne DNS Server</text>
+          </g>
+
+          <!-- FS (Samba Failiserver) -->
+          <g transform="translate(315, 170)">
+            <rect x="0" y="0" width="220" height="110" rx="10" fill="#252238" stroke="#6c5ce7" stroke-width="1.5"/>
+            <text x="110" y="24" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle" font-family="sans-serif">fs.company.local</text>
+            <text x="110" y="42" fill="#888" font-size="11" text-anchor="middle" font-family="sans-serif">Ubuntu Server 24.04 LTS</text>
+            <text x="110" y="65" fill="#a29bfe" font-size="11" font-weight="bold" text-anchor="middle" font-family="sans-serif">• Samba Failiserver (Domain Member)</text>
+            <text x="110" y="83" fill="#b0b0d0" font-size="10" text-anchor="middle" font-family="sans-serif">Kaustad: Juhatus, Eesti, Avalik</text>
+          </g>
+
+          <!-- WIKI (Wiki.js) -->
+          <g transform="translate(585, 170)">
+            <rect x="0" y="0" width="220" height="110" rx="10" fill="#252238" stroke="#fd79a8" stroke-width="1.5"/>
+            <text x="110" y="24" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle" font-family="sans-serif">wiki.company.local</text>
+            <text x="110" y="42" fill="#888" font-size="11" text-anchor="middle" font-family="sans-serif">Ubuntu Server 24.04 LTS</text>
+            <text x="110" y="65" fill="#fd79a8" font-size="11" font-weight="bold" text-anchor="middle" font-family="sans-serif">• Wiki.js Teadmusbaas</text>
+            <text x="110" y="83" fill="#b0b0d0" font-size="10" text-anchor="middle" font-family="sans-serif">AD/LDAP autentimine & kasutusjuhendid</text>
+          </g>
+
+          <!-- CHAT (Rocket.Chat) -->
+          <g transform="translate(45, 330)">
+            <rect x="0" y="0" width="220" height="110" rx="10" fill="#252238" stroke="#fd79a8" stroke-width="1.5"/>
+            <text x="110" y="24" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle" font-family="sans-serif">chat.company.local</text>
+            <text x="110" y="42" fill="#888" font-size="11" text-anchor="middle" font-family="sans-serif">Ubuntu Server 24.04 LTS</text>
+            <text x="110" y="65" fill="#fd79a8" font-size="11" font-weight="bold" text-anchor="middle" font-family="sans-serif">• Rocket.Chat (Docker)</text>
+            <text x="110" y="83" fill="#b0b0d0" font-size="10" text-anchor="middle" font-family="sans-serif">Reverse Proxy (Port 80) & AD Sync</text>
+          </g>
+
+          <!-- PILV (Nextcloud) -->
+          <g transform="translate(315, 330)">
+            <rect x="0" y="0" width="220" height="110" rx="10" fill="#252238" stroke="#fd79a8" stroke-width="1.5"/>
+            <text x="110" y="24" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle" font-family="sans-serif">pilv.company.local</text>
+            <text x="110" y="42" fill="#888" font-size="11" text-anchor="middle" font-family="sans-serif">Ubuntu Server 24.04 LTS</text>
+            <text x="110" y="65" fill="#fd79a8" font-size="11" font-weight="bold" text-anchor="middle" font-family="sans-serif">• Nextcloud Privaatpilv</text>
+            <text x="110" y="83" fill="#b0b0d0" font-size="10" text-anchor="middle" font-family="sans-serif">Juhatuse AD autentimine & External Storage</text>
+          </g>
+
+          <!-- WINTEST (Testmasin) -->
+          <g transform="translate(585, 330)">
+            <rect x="0" y="0" width="220" height="110" rx="10" fill="#252238" stroke="#00b894" stroke-width="1.5"/>
+            <text x="110" y="24" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle" font-family="sans-serif">wintest.company.local</text>
+            <text x="110" y="42" fill="#888" font-size="11" text-anchor="middle" font-family="sans-serif">Windows 11 Pro</text>
+            <text x="110" y="65" fill="#00b894" font-size="11" font-weight="bold" text-anchor="middle" font-family="sans-serif">• Testklient & RSAT</text>
+            <text x="110" y="83" fill="#b0b0d0" font-size="10" text-anchor="middle" font-family="sans-serif">Automaatsed võrgukettad & GPO tapeet</text>
+          </g>
+        </svg>
+        <span style="display: block; font-size: 0.85rem; color: #888; margin-top: 0.5rem;">Joonis 2: Linux/BSD taristuteenuste arhitektuur ja võrgutopoloogia</span>
+      </div>
+
+      <h3 class="modal_section_title">Teostatud tööd ja funktsionaalsus</h3>
+      <ul style="list-style: disc; padding-left: 1.2rem; color: #c2c2e0; line-height: 1.8; font-size: 0.9rem;">
+        <li><strong>Tulemüür ja võrk:</strong> OPNsense ruuteri seadistamine koos vajalike võrguadapterite ja riistvaraliste optimeerimistega.</li>
+        <li><strong>Lokaalne domeenihaldus (Samba AD):</strong> Seadistati Linuxi baasil Active Directory domeen (<code>company.local</code>) koos tsentraalse kasutajahalduse ja OU struktuuriga (Juhatus, Töötajad, Arvutid).</li>
+        <li><strong>Grupipoliitikad (GPO):</strong> Win11 klientmasinatele seadistati automaatne võrguketaste haakimine (J:, H:, O:) vastavalt turvagruppidele ja kolmnurkadega töölaua taustapilt.</li>
+        <li><strong>Samba Failiserver:</strong> Konfigureeriti jagatud kaustad (<code>Juhatus</code>, <code>Eesti</code>, <code>Avalik</code>) täpsete POSIX/ACL õigustega.</li>
+        <li><strong>Teadmusbaas Wiki.js:</strong> Paigaldata teenus ning liidestati Samba AD/LDAP autentimisega, et tagada ühtne sisselogimine (SSO).</li>
+        <li><strong>Privaatpilv Nextcloud:</strong> Liidestati AD-ga (piiratud Juhatuse liikmetele) ning paigaldati <i>External Storage Support</i>, et haakida külge failiserveri kaust "Eesti".</li>
+        <li><strong>Sisechat Rocket.Chat:</strong> Deploiti Docker-compose konteinerina koos Nginxi reverse proxy-ga (ilma porti 3000 kuvamata) ja integreeriti keskse kasutajatunnuse süsteemiga.</li>
+      </ul>
+
+      <h3 class="modal_section_title">Süsteemi komponendid</h3>
+      <div style="overflow-x: auto;">
+        <table class="config_table">
+          <thead>
+            <tr>
+              <th>Hostinimi</th>
+              <th>Operatsioonisüsteem</th>
+              <th>Teenused</th>
+              <th>Märkused</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>RUUTER</strong></td>
+              <td>OPNsense</td>
+              <td>Ruuting, tulemüür, DHCP server</td>
+              <td>Hardware offloads väljalülitatud</td>
+            </tr>
+            <tr>
+              <td><strong>DC</strong></td>
+              <td>Ubuntu Server 24.04 LTS</td>
+              <td>DomainController (Samba AD)</td>
+              <td>Keskne AD DS & DNS</td>
+            </tr>
+            <tr>
+              <td><strong>FS</strong></td>
+              <td>Ubuntu Server 24.04 LTS</td>
+              <td>Failiserver (Samba)</td>
+              <td>Domain member (Juhatus, Eesti, Avalik kaustad)</td>
+            </tr>
+            <tr>
+              <td><strong>WIKI</strong></td>
+              <td>Ubuntu Server 24.04 LTS</td>
+              <td>Wiki.js veebirakendus</td>
+              <td>AD/LDAP autentimine, kasutusjuhendid</td>
+            </tr>
+            <tr>
+              <td><strong>CHAT</strong></td>
+              <td>Ubuntu Server 24.04 LTS</td>
+              <td>Rocket.Chat veebirakendus</td>
+              <td>Docker, Reverse Proxy (port 80), AD/LDAP</td>
+            </tr>
+            <tr>
+              <td><strong>PILV</strong></td>
+              <td>Ubuntu Server 24.04 LTS</td>
+              <td>Nextcloud veebirakendus</td>
+              <td>AD/LDAP autentimine (Juhatus), External Storage Eesti</td>
+            </tr>
+            <tr>
+              <td><strong>WINTEST</strong></td>
+              <td>Windows 11 Pro</td>
+              <td>Testimise masin, RSAT</td>
+              <td>Domain member, GPO võrgukettad & tapeet</td>
             </tr>
           </tbody>
         </table>
