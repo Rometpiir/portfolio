@@ -614,22 +614,41 @@
   <script src="./assets/js/typed.js"></script>
   <script src="./assets/js/main.js"></script>
 
-  <script>
+<script>
+    // Windows Modal
     function openModal() {
-      document.getElementById('projectModal').style.display = 'block';
+      var winModal = document.getElementById('projectModal');
+      if (winModal) winModal.style.display = 'block';
     }
 
     function closeModal() {
-      document.getElementById('projectModal').style.display = 'none';
+      var winModal = document.getElementById('projectModal');
+      if (winModal) winModal.style.display = 'none';
     }
 
-    // Sulge akna väljapoole vajutades
-    window.onclick = function(event) {
-      const modal = document.getElementById('projectModal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
-      }
+    // Linux Modal
+    function openLinuxModal() {
+      var linuxModal = document.getElementById('linuxModal');
+      if (linuxModal) linuxModal.style.display = 'block';
     }
+
+    function closeLinuxModal() {
+      var linuxModal = document.getElementById('linuxModal');
+      if (linuxModal) linuxModal.style.display = 'none';
+    }
+
+    // Sulge aken väljapoole vajutades (mõlema akna jaoks)
+    window.onclick = function(event) {
+      var winModal = document.getElementById('projectModal');
+      var linuxModal = document.getElementById('linuxModal');
+
+      if (event.target === winModal) {
+        winModal.style.display = 'none';
+      }
+      if (event.target === linuxModal) {
+        linuxModal.style.display = 'none';
+      }
+    };
   </script>
 </body>
 
